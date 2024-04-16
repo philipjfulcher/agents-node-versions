@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CLI tests should print a message 1`] = `
+"Hello World
+[33mfalse[39m
+[33mfalse[39m
+[33mfalse[39m
+[33mfalse[39m
+[33mtrue[39m
+[33mtrue[39m
+"
+`;

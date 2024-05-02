@@ -19,6 +19,18 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "e2e": {
+      "cache": true
+    },
+    "build": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
     }
   },
   "plugins": [
@@ -27,12 +39,9 @@
       "options": {
         "targetName": "lint"
       }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
     }
-  ]
+  ],
+  "nxCloudAccessToken": "YjExMWJhNDMtYmJhMi00OTI3LWIyMzktZmM5Y2M0ZjM0MDU1fHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "https:/staging.nx.app",
+  "bust": "cache43"
 }

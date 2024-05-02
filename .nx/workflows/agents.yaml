@@ -1,0 +1,30 @@
+launch-templates:
+  node-18:
+    resourceClass: 'docker_linux_amd64/medium'
+    image: 'ubuntu22.04-node20.9-v3'
+    init-steps:
+      - name: Checkout # using a reusable step
+        uses: 'nrwl/nx-cloud-workflows/v3.6/workflow-steps/checkout/main.yaml'
+
+      - name: Print node version
+        # print the system node version to compare later
+        script: node -v
+
+      - name: Install nvm
+        # run nvm install script
+        # source the updated profile to get the nvm command available
+        # install the needed version of nvm
+        # echo the current path (which now includes the nvm-provided version of node) to NX_CLOUD_ENV
+        script: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash &&
+          source ~/.profile &&
+          nvm install 18.19.1 &&
+          echo "PATH=$PATH" >> $NX_CLOUD_ENV
+
+      - name: Print node version
+        # confirm that the node version has changed
+        script: node -v
+
+      - name: Install Node Modules
+        # install node modules
+        script: npm ci

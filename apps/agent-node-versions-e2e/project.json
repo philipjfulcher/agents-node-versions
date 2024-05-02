@@ -11,6 +11,12 @@
         "jestConfig": "apps/agent-node-versions-e2e/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "node-version": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node -v"
+      }
     }
   }
 }
